@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # SERVICIO 4: AUTENTICACIÓN (El nuestro)
+  # SERVICIO 4: AUTENTICACIÓN
 
   auth-service:
     build: ./servicio4       
