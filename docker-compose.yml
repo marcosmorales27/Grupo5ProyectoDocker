@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  # Servicio 4: Autenticación
+  auth-service:
+    build: ./servicio4   # Ruta a la carpeta del dockerfile
+    ports:
+      - "5000:5000"          # Mapeo de puertos (Host:Contenedor)
+    container_name: ervicio4
+  
+  # Aquí agregarías tus otros servicios (1, 2 y 3) siguiendo el mismo patrón
+  # servicio-1:
+  #   build: ./servicio-1
+  #   ports: ... 
