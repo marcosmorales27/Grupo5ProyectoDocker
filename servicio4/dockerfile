@@ -1,16 +1,20 @@
+# Usamos una imagen ligera de Python
 FROM python:3.9-slim
 
+# Establecemos el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# 1. Copiamos primero los requerimientos (para aprovechar la caché de Docker)
+# 1. Copiamos el archivo de requisitos primero
 COPY requirements.txt .
 
-# 2. Instalamos las dependencias desde el archivo
+# 2. Instalamos las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 3. Copiamos el resto del código
+# 3. Copiamos el resto del código fuente
 COPY . .
 
+# Exponemos el puerto 5000
 EXPOSE 5000
 
+# Comando para iniciar la aplicación
 CMD ["python", "main.py"]
