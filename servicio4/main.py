@@ -3,9 +3,9 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 USERS = {
-    "admin": "1234",
-    "estudiante": "pass123",
-    "docente": "admin123"
+    "admin": "admin",
+    "estudiante": "marcos",
+    "docente": "eleana"
 }
 
 @app.route('/login', methods=['POST'])
