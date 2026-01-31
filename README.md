@@ -3,7 +3,7 @@
 una vez clonado el repositorio de github 
 ingresar al docker-compose.yml 
 
-otra forma de ver el trabajo realizado con los servicios 1,2 y 3 es ingresando a localhost:8080 en el navegador
+otra forma de ver el trabajo realizado con los servicios 1,2 y 3 es ingresando a http://localhost:8080 en el navegador
 
 y en el cmd ejecutar el script: docker compose up --build -d 
 
