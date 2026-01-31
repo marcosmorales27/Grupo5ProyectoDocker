@@ -8,10 +8,15 @@ y ahora para ver los servicios 1,2 y 3 implementados:
 
 abrimos http://localhost:8081 en el navegador
 agregamos estos datos 
+
 Motor (System): elegir PostgreSQL.
+
 Servidor (Server): Escribe servicio-2 
+
 Usuario (Username): usuario
+
 Contraseña (Password): secreto
+
 Base de datos (Database): mibasedatos
 
 Se podra observar el trabajo realizado
