@@ -1,29 +1,27 @@
 # Proyecto docker grupo 5
-Arquitectura de Microservicios: Frontend, Backend, Base de Datos y Autenticación.
+Arquitectura: frontend, backend, base de datos y autenticación.
 
-## Instrucciones de Instalación y Ejecución
-
-Siga estos pasos en orden estricto para levantar el proyecto:
+## Instrucciones de instalación y ejecución
 
 1. Descargar y preparar
 1. Clone el repositorio o descargue la carpeta.
-2. Abra su terminal (CMD o PowerShell).
+2. Abre CMD.
 3. Importante: Navegue hasta entrar en la carpeta del proyecto (donde se encuentra el archivo `docker-compose.yml`).
 
 2. Ejecutar los contenedores
-Ejecute el siguiente comando en la terminal para construir y levantar los servicios:
+Ejecute el siguiente comando en la terminal para construir los servicios:
 docker compose up --build -d
 
-probar los servicios en navegador
+Probar los servicios en navegador
 
 1. Frontend Web servicios 1, 2 y 3 
-Ingrese a la siguiente dirección para ver la interfaz gráfica que consume el API y la Base de Datos: http://localhost:8080
+Ingrese a la siguiente dirección para ver el API y la Base de Datos: http://localhost:8080
 
-2. Servicio de Autenticación servicio 4
-Para verificar que el servicio de seguridad responde: http://localhost:5000
+2. Servicio de autenticación servicio 4
+Para verificar que el servicio de seguridad: http://localhost:5000
 
-3. Administración de Base de Datos
-Para ver los datos reales guardados en PostgreSQL, ingrese a: http://localhost:8081
+3. Administración de base de datos
+Para ver los datos guardados en PostgreSQL, ingrese a: http://localhost:8081
 
 Motor (System): PostgreSQL
 
