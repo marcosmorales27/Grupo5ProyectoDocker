@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consumo de API</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; text-align: center; padding: 20px; }
+        .container { background: white; max-width: 600px; margin: 0 auto; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        button:hover { background-color: #0056b3; }
+        ul { list-style-type: none; padding: 0; text-align: left; }
+        li { background: #e9ecef; margin: 5px 0; padding: 10px; border-radius: 4px; border-left: 5px solid #007bff; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1> Cliente web</h1>
+        <p>Este frontend consume datos del servicio 1</p>
+        
+        <button onclick="cargarDatos()">Cargar satos de la API</button>
+
+        <div id="lista-datos">
+            <p> click al botón para ver los registros</p>
+        </div>
+    </div>
+
+    <script>
+        async function cargarDatos() {
+            const contenedor = document.getElementById('lista-datos');
+            contenedor.innerHTML = "<p>Cargando...</p>";
+
+            try {
+                const respuesta = await fetch('http://localhost:3001/data');
+                
+                if (!respuesta.ok) throw new Error("Error en la red");
+
+                const datos = await respuesta.json();
+
+                let html = '<ul>';
+                datos.forEach(item => {
+                    html += `<li><strong>ID #${item.id}:</strong> ${item.mensaje}</li>`;
+                });
+                html += '</ul>';
+                contenedor.innerHTML = html;
+
+            } catch (error) {
+                console.error(error);
+                contenedor.innerHTML = `<p class="error"> No se pudo conectar con el servicio 1. <br> Asegúrate de que el servicio 1 esté corriendo.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

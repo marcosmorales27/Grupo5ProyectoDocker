@@ -1,17 +1,64 @@
-version: '3.8'
-
 services:
-  # SERVICIO 4: AUTENTICACIÓN
-
-  auth-service:
-    build: ./servicio4       
-    container_name: auth-service
+  # servicio 1 api rest
+  servicio-1:
+    build: ./servicio1
+    container_name: servicio-1
     ports:
-      - "5000:5000"          
+      - "3001:3000"
     environment:
-      - FLASK_ENV=production 
+      - DB_HOST=servicio-2
+      - DB_NAME=mibasedatos
+      - DB_USER=usuario
+      - DB_PASS=secreto
+    depends_on:
+      - servicio-2
     networks:
       - red-microservicios
+
+  # servicio 2 base de datos
+  servicio-2:
+    image: postgres:13-alpine
+    container_name: servicio-2
+    environment:
+      - POSTGRES_DB=mibasedatos
+      - POSTGRES_USER=usuario
+      - POSTGRES_PASSWORD=secreto
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - red-microservicios
+
+  #servicio 3 frontend web
+  servicio-3:
+    build: ./servicio3
+    container_name: servicio-3
+    ports:
+      - "8080:80"
+    networks:
+      - red-microservicios
+
+  #servicio 4 autenticacion
+  auth-service:
+    build: ./servicio4
+    container_name: auth-service
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+    networks:
+      - red-microservicios
+
+  #visor de base de datos
+  db-admin:
+    image: adminer
+    container_name: db-admin
+    ports:
+      - "8081:8080" 
+    networks:
+      - red-microservicios
+
+volumes:
+  postgres_data:
 
 networks:
   red-microservicios:
