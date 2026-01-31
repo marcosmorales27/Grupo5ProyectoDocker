@@ -4,9 +4,9 @@ una vez clonado el repositorio de github
 ingresar al docker-compose.yml 
 y en el cmd ejecutar el script: docker compose up --build -d 
 
-y ahora para ver ver la base datos:
+y ahora para ver los servicios 1,2 y 3 implementados:
 
-abimos http://localhost:8081 en el navegador
+abrimos http://localhost:8081 en el navegador
 agregamos estos datos 
 Motor (System): elegir PostgreSQL.
 Servidor (Server): Escribe servicio-2 
