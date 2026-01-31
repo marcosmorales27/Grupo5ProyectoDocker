@@ -1,27 +1,36 @@
-# Grupo5ProyectoDocker
+# Proyecto docker grupo 5
+Arquitectura de Microservicios: Frontend, Backend, Base de Datos y Autenticación.
 
-una vez clonado el repositorio de github 
-ingresar al docker-compose.yml 
+## Instrucciones de Instalación y Ejecución
 
-otra forma de ver el trabajo realizado con los servicios 1,2 y 3 es ingresando a http://localhost:8080 en el navegador
+Siga estos pasos en orden estricto para levantar el proyecto:
 
-y en el cmd ejecutar el script: docker compose up --build -d 
+1. Descargar y preparar
+1. Clone el repositorio o descargue la carpeta.
+2. Abra su terminal (CMD o PowerShell).
+3. Importante: Navegue hasta entrar en la carpeta del proyecto (donde se encuentra el archivo `docker-compose.yml`).
 
-Para ver los servicios 2 de la base de datos:
+2. Ejecutar los contenedores
+Ejecute el siguiente comando en la terminal para construir y levantar los servicios:
+docker compose up --build -d
 
-abrimos http://localhost:8081 en el navegador
-agregamos estos datos 
+probar los servicios en navegador
 
-Motor (System): elegir PostgreSQL.
+1. Frontend Web servicios 1, 2 y 3 
+Ingrese a la siguiente dirección para ver la interfaz gráfica que consume el API y la Base de Datos: http://localhost:8080
 
-Servidor (Server): Escribe servicio-2 
+2. Servicio de Autenticación servicio 4
+Para verificar que el servicio de seguridad responde: http://localhost:5000
+
+3. Administración de Base de Datos
+Para ver los datos reales guardados en PostgreSQL, ingrese a: http://localhost:8081
+
+Motor (System): PostgreSQL
+
+Servidor (Server): servicio-2
 
 Usuario (Username): usuario
 
 Contraseña (Password): secreto
 
 Base de datos (Database): mibasedatos
-
-Se podra observar el trabajo realizado
-
-y para comprobar el funcionamiento del servicio 4 en el navegador debera escribir http://localhost:5000
